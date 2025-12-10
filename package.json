@@ -1,0 +1,9 @@
+{
+  "name": "nexadeploy-ui",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js",
+    "build": "echo Build script here"
+  },
+  "dependencies": {}
+}
