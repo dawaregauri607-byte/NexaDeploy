@@ -21,7 +21,13 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build API Docker Image') {
+            steps {
+                bat 'docker build -t nexa-api:latest ./api'
+            }
+        }
+
+        stage('Build UI Docker Image') {
             steps {
                 bat 'docker build -t nexa-ui:latest ./ui'
             }
@@ -33,7 +39,14 @@ pipeline {
             }
         }
 
-        stage('Push to DockerHub') {
+        stage('Push API Image to DockerHub') {
+            steps {
+                bat 'docker tag nexa-api:latest dawaregauri607/nexa-api:latest'
+                bat 'docker push dawaregauri607/nexa-api:latest'
+            }
+        }
+
+        stage('Push UI Image to DockerHub') {
             steps {
                 bat 'docker tag nexa-ui:latest dawaregauri607/nexa-ui:latest'
                 bat 'docker push dawaregauri607/nexa-ui:latest'
