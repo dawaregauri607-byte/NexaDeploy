@@ -35,7 +35,7 @@ pipeline {
 
         stage('Login to DockerHub') {
             steps {
-                bat 'docker login -u dawaregauri607 -p Deshmukh@12345678'
+               bat 'docker login -u dawaregauri607 -p Deshmukh@12345678'
             }
         }
 
