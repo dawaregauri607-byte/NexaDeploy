@@ -33,12 +33,15 @@ pipeline {
             }
         }
 
+        
         stage('Login to DockerHub') {
             steps {
-               bat 'docker login -u dawaregauri607 -p Deshmukh@12345678'
+                // Plain text password temporarily, replace with Credentials for safety later
+                bat 'docker login -u dawaregauri607 -p Deshmukh@12345678'
             }
         }
 
+    
         stage('Push API Image to DockerHub') {
             steps {
                 bat 'docker tag nexa-api:latest dawaregauri607/nexa-api:latest'
@@ -46,6 +49,7 @@ pipeline {
             }
         }
 
+        
         stage('Push UI Image to DockerHub') {
             steps {
                 bat 'docker tag nexa-ui:latest dawaregauri607/nexa-ui:latest'
