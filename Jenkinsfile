@@ -33,11 +33,10 @@ pipeline {
             }
         }
 
-        
         stage('Login to DockerHub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-cred', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                   bat 'docker login -u dawaregauri607 -p Deshmukh@12345678'
+                    bat 'docker login -u dawaregauri607 -p Deshmukh@12345678'
                 }
             }
         }
